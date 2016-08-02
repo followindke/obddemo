@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>试乘试驾车管理系统DEMO页</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="keywords" content="obd,demo,loction">
+	<meta http-equiv="description" content="This is a demo page">
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="./js/locale/easyui-lang-zh_CN.js"></script>
+	<link rel="stylesheet" href="./css/default/easyui.css" type="text/css"></link>
+	<link rel="stylesheet" href="./css/icon.css" type="text/css"></link>
+	<link rel="stylesheet" href="./css/color.css" type="text/css"></link>
+	<link rel="stylesheet" href="./css/demo.css" type="text/css"></link>
+	<script type="text/javascript" src="./js/statistics.js"></script>
+    <script type="text/javascript" src="./js/echarts.min.js"></script>
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north',split:true" style="height:50px;">
+        <div class="easyui-panel foot-panel" data-options="border:false" style="padding:10px;">
+            <span id="go_to_index" style="font-size:24px;">试乘试驾车管理系统(DEMO页)</span>
+            <span class="link_span"><a href="./">主页</a></span>
+            <span class="link_span"><a href="./statistics.html">数据统计</a></span>
+        </div>
+    </div>
+    <div data-options="region:'south',split:false" style="height:20px;">
+    	<div class="easyui-panel foot-panel" data-options="border:false">
+    		@copyright fansoon
+    	</div>
+    </div>
+    <div data-options="region:'center'" style="padding:5px;background:#eee;">
+    	<div id="table_div" class="easyui-panel" style="height:100%">
+            <table id="statistics_table" class="easyui-datagrid">
+                <thead>
+                    <tr>
+                        <th data-options="field:'car_type',title:'车型',width:40"></th>
+                        <th data-options="field:'car_id',title:'底盘号',width:130"></th>
+                        <th data-options="field:'car_owner',title:'车辆所有人',width:200"></th>
+                        <th data-options="field:'car_no',title:'车牌号',width:80"></th>
+                        <th data-options="field:'car_status',title:'车辆状态',width:60"></th>
+                        <th data-options="field:'distance',width:70"><span onclick="showStatistics('distance');" class="statistics_span">试驾总里程</span></th>
+                        <th data-options="field:'count',width:70"><span onclick="showStatistics('count');" class="statistics_span">试驾总次数</span></th>
+                        <th data-options="field:'total_time',title:'试驾总耗时',width:70"></th>
+                        <th data-options="field:'used_count',title:'设备插拔总次数',width:100"></th>
+                        <th data-options="field:'over_count',title:'超出范围次数',width:90"></th>
+                        <th data-options="field:'average_distance',title:'单次平均驾驶里程',width:110"></th>
+                        <th data-options="field:'average_time',title:'单次平均驾驶时间',width:110"></th>
+                        <th data-options="field:'actions',title:'驾驶行为',width:250"></th>
+                        <th data-options="field:'oil',title:'总油耗',width:50"></th>
+                        <th data-options="field:'oil100',title:'百公里油耗',width:70"></th>
+                        <th data-options="field:'average_speed',title:'平均时速',width:60"></th>
+                        <th data-options="field:'max_speed',title:'最高时速',width:60"></th>
+                        <th data-options="field:'max_up_speed',title:'瞬时最大加速度',width:100"></th>
+                        <th data-options="field:'wrong_action',title:'违规类型',width:60"></th>
+                    </tr>
+                </thead>
+            </table> 
+        </div>  
+    </div>
+</body>
+
+<div id="statistics_dialog" class="easyui-dialog" title="图表统计" style="width:600px;height:400px;"
+        data-options="iconCls:'icon-save',resizable:true,modal:true">
+    <div id="statistics_show" style="width: 600px;height:400px;"></div>
+</div>
+</html>
